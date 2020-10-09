@@ -3,7 +3,7 @@
     import store from './stores/grid';
     const createCard = () => {
         store.addCard({
-            id: `${Math.random()}`,
+            id: `${Math.random()}`, //(Could be position, could be a uuid, could be anything)
             text: 'New Card Text',
         });
     };
@@ -14,7 +14,7 @@
     <p>A service blueprinting application.</p>
     {#if $store.cards.length}
         {#each $store.cards as card}
-            <Card />
+            <Card {...card} />
         {/each}
     {/if}
 
