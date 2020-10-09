@@ -1,5 +1,6 @@
 import svelte from "rollup-plugin-svelte";
 import autoPreprocess from "svelte-preprocess";
+import json from 'rollup-plugin-json';
 import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -17,6 +18,8 @@ export default {
     file: "public/bundle.js",
   },
   plugins: [
+    json(),
+
     typescript({ sourceMap: !production }),
 
     svelte({
