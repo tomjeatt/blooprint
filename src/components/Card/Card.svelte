@@ -26,7 +26,13 @@
 
   textarea {
     display: block;
-    width: 100%;
+    margin: 5px auto;
+    resize: none;
+    width: 94%;
+  }
+
+  textarea:read-only {
+    border: none;
   }
 </style>
 
