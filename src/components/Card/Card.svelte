@@ -1,19 +1,19 @@
-<script>
+<script lang="ts">
   import data from "../../data/card.json";
 
   const { text } = data;
 
-  let textField;
+  let textField: HTMLElement;
 
-  const makeEditable = () => {
+  const makeEditable: () => void = () => {
     textField.removeAttribute("readonly");
     textField.focus();
   };
 
-  const saveCard = (event) => {
+  const saveCard: (event: Event) => void = (event) => {
     event.preventDefault();
 
-    textField.setAttribute("readonly", true);
+    textField.setAttribute("readonly", "true");
   };
 </script>
 
