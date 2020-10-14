@@ -1,12 +1,11 @@
 <script lang="ts">
-    import data from '../../data/card.json';
-
-    const { text } = data;
-
-    let cards = [data];
+    export let text: string;
+    export let rowNumber: number;
+    export let cardNumber: number;
     let textField: HTMLElement;
 
     const makeEditable: () => void = () => {
+        console.log(`Editing Card at ${cardNumber}, ${rowNumber}`);
         textField.removeAttribute('readonly');
         textField.focus();
     };
@@ -30,7 +29,7 @@
     .card {
         border: 1px solid lightgray;
         margin: 0 auto;
-        width: 400px;
+        width: 300px;
     }
 
     textarea {
