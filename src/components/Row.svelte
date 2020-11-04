@@ -6,8 +6,8 @@
 </script>
 
 <div class="row">
-    {#each cards as card, i}
-        <Card text={card.text} {rowNumber} cardNumber={i} />
+    {#each cards as { text }, i}
+        <Card {text} {rowNumber} cardNumber={i} />
     {/each}
 </div>
 
