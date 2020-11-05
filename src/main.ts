@@ -1,7 +1,4 @@
-import App from "./App.svelte";
-
-const app = new App({
-  target: document.body,
-});
-
-export default app;
+export type CardData = {
+    text: string;
+};
+export type RowData = Array<CardData>;
