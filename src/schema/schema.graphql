@@ -1,0 +1,17 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    getCards: [Card]
+}
+
+type Card {
+    id: ID!
+    text: string
+}
+
+type Mutation {
+    addCard(id: ID!, text: String): Card
+}
