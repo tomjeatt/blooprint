@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application renders renders 1`] = `
+<DocumentFragment>
+  <main>
+    <h1>
+      Blooprint
+    </h1>
+  </main>
+</DocumentFragment>
+`;
