@@ -4,15 +4,16 @@ import { ColumnWrapper } from './Column.style';
 
 interface IProps {
   set: ISet;
+  updateCardContent: (setId: number, cardId: number, updatedContent: string) => void;
 }
 
-const Column: React.FC<IProps> = ({ set: { id, title, cards } }: IProps) => {
+const Column: React.FC<IProps> = ({ set: { id: setId, title, cards }, updateCardContent }: IProps) => {
   return (
     <ColumnWrapper>
       <h2>{title}</h2>
       {cards.map((card) => {
         const { id, content } = card;
-        return <Card key={id} id={id} parentId={id} content={content} />;
+        return <Card key={id} id={id} setId={setId} content={content} updateCardContent={updateCardContent} />;
       })}
     </ColumnWrapper>
   );

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { getCard } from '../../data/utilities/getCard';
 import { CardWrapper } from './Card.style';
 
 interface IProps {
   content: string;
   id: number;
-  parentId: number;
+  setId: number;
+  updateCardContent: (setId: number, cardId: number, updatedContent: string) => void;
 }
 
-const Card: React.FC<IProps> = ({ content, id, parentId }: IProps) => {
+const Card: React.FC<IProps> = ({ content, id, setId, updateCardContent }: IProps) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
   const [cardContent, setCardContent] = useState<string>(content);
 
@@ -20,14 +20,10 @@ const Card: React.FC<IProps> = ({ content, id, parentId }: IProps) => {
     console.log('add');
   };
 
-  const updateCardContent = () => {
+  const handleUpdateCardContent = () => {
     setIsEditable(false);
 
-    const thisCard = getCard(parentId, id);
-
-    if (thisCard) {
-      thisCard.content = cardContent;
-    }
+    updateCardContent(setId, id, cardContent);
   };
 
   const textChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -42,8 +38,8 @@ const Card: React.FC<IProps> = ({ content, id, parentId }: IProps) => {
     <CardWrapper>
       {isEditable ? (
         <>
-          <textarea value={content} onChange={textChangeHandler} />
-          <button onClick={updateCardContent}>Save</button>
+          <textarea value={cardContent} onChange={textChangeHandler} />
+          <button onClick={handleUpdateCardContent}>Save</button>
         </>
       ) : (
         <>
