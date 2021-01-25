@@ -6,3 +6,10 @@ export const BlooprintWrapper = styled.div(() => {
     display: flex;
   `;
 });
+
+export const Columns = styled.div(() => {
+  return css`
+    background-color: transparent;
+    display: flex;
+  `;
+});

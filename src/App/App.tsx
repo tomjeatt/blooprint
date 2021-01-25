@@ -3,7 +3,7 @@ import AppContext from '../data/AppContext';
 import Theme from '../theme/Theme';
 import Blooprint from '../components/Blooprint';
 
-const applicationData = {
+const applicationData: IApplicationData = {
   title: 'Example blooprint',
   sets: [
     {
@@ -37,23 +37,23 @@ const applicationData = {
       id: 2,
       cards: [
         {
-          id: 1,
+          id: 6,
           content: '',
         },
         {
-          id: 2,
+          id: 7,
           content: 'Call centre agent collects move out date and personal information',
         },
         {
-          id: 3,
+          id: 8,
           content: '',
         },
         {
-          id: 4,
+          id: 9,
           content: '',
         },
         {
-          id: 5,
+          id: 10,
           content: 'Receive welcome comm via post or email',
         },
       ],
@@ -63,23 +63,23 @@ const applicationData = {
       id: 3,
       cards: [
         {
-          id: 1,
+          id: 11,
           content: '',
         },
         {
-          id: 2,
+          id: 12,
           content: '',
         },
         {
-          id: 3,
+          id: 13,
           content: '',
         },
         {
-          id: 4,
+          id: 14,
           content: '',
         },
         {
-          id: 5,
+          id: 15,
           content: 'If the person calls, the agent is able to explain technobabble',
         },
       ],

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../../data/AppContext';
 import Column from '../../components/Column';
-import { BlooprintWrapper } from './Blooprint.style';
+import { BlooprintWrapper, Columns } from './Blooprint.style';
 
 const Blooprint: React.FC = () => {
   const { title, sets } = useContext(AppContext) as IApplicationData;
@@ -9,10 +9,12 @@ const Blooprint: React.FC = () => {
   return (
     <BlooprintWrapper>
       <h2>{title}</h2>
-      {sets.map((set) => {
-        const { id, title, cards } = set;
-        return <Column key={id} title={title} cards={cards} />;
-      })}
+      <Columns>
+        {sets.map((set) => {
+          const { id } = set;
+          return <Column key={id} set={set} />;
+        })}
+      </Columns>
     </BlooprintWrapper>
   );
 };
